@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './userpage.css'
+import {Carousel} from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
 
 function UserPage() {
   const [events, setEvents] = useState([]);
@@ -32,6 +34,7 @@ function UserPage() {
   return (
     <div className="container">
     <h2>Event List</h2>
+    <Carousel infiniteLoop showThumbs={false}>
     {events.map((event) => (
       <div key={event._id} className="event-card">
         <div>
@@ -43,6 +46,7 @@ function UserPage() {
         <button onClick={() => setSelectedEvent(event)}>Book Tickets</button>
       </div>
     ))}
+    </Carousel>
 
     {selectedEvent && (
       <div className="selected-event">

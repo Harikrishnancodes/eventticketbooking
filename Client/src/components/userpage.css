@@ -5,7 +5,7 @@
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: #8a4e4e34;
     border: 1px solid #ddd;
     border-radius: 5px;
   }
@@ -14,7 +14,7 @@
   .event-card {
     padding: 10px;
     margin: 10px 0;
-    background-color: #fff;
+    background-color: #4dd83bec;
     border: 1px solid #ddd;
     border-radius: 5px;
     display: flex;
@@ -36,7 +36,7 @@
   .selected-event {
     margin-top: 20px;
     padding: 10px;
-    background-color: #dc0e0e4c;
+    background-color: #6151c74c;
     border: 1px solid #ddd;
     border-radius: 5px;
   }

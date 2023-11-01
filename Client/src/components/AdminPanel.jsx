@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './adminpanel.css'
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
 
 function EventList() {
   const [events, setEvents] = useState([]);
@@ -56,18 +58,18 @@ function EventList() {
 
   return (
     <div>
-      <h2>Event List</h2>
-      <ul>
+       <h2>Event</h2>
+      <Carousel infiniteLoop showThumbs={false}>
         {events.map((event) => (
-          <li key={event._id}>
+          <div key={event._id}>
             <h3>{event.name}</h3>
             <p>Date: {event.date}</p>
             <p>Description: {event.description}</p>
             <p>Price: {event.price}</p>
             <button onClick={() => deleteEvent(event._id)}>Delete</button>
-          </li>
+          </div>
         ))}
-      </ul>
+      </Carousel>
 
       <h2>Add New Event For Admins</h2>
       <input
