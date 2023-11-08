@@ -1,4 +1,246 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@700&display=swap');
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+  /* background-color: aqua; */
+}
+.admin{
+  padding: 20px;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  /* padding-top: 40px; */
+  background-image: url(../images/admin-background.jpg);
+}
+.admin-main-div{
+  padding: 20px;
+  border-radius: 7px;
+  /* border: 2px solid red; */
+}
+.admin-main-div {
+  /* padding-top: 20px; */
+  /* background-image: url(../images/admin-background.jpg) ; */
+}
+.event-delete-btn{
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: #007bff;
+  border:none;
+  color: white;
+}
+.event-delete-btn:hover{
+  background-color: red;
+}
+
+.heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px;
+  text-align: center;
+
+}
+.heading h2{
+  font-size: 22px;
+}
+.carousel-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid rgba(9, 255, 0, 0.752); */
+}
+.card-main-div{
+  max-width: 75%;
+  /* max-height: 50vh; */
+  /* overflow-y: scroll; */
+}
+.card-body{
+  font-size: 14px;
+}
+.short-txt{
+  font-weight: 500;
+  padding-inline-end: 3px;
+}
+.event-image{
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+}
+.no-event{
+  width: 100% !important;
+  color: red;
+  font-size: 15px;
+  
+}
+/* .carousel-items{
+  max-width: 65%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid rgb(171, 180, 172);
+  background-color: aliceblue;
+  border-radius: 5px;
+  border: 5px solid rgb(47, 163, 99);
+}
+.carousel-caption{
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid yellow;
+  margin: 0px !important;
+  padding: 0px !important;
+  word-break: normal;
+}
+.event-img{
+  max-width: 65;
+  max-height: 40vh;
+  opacity: 0.5;
+  background-size: cover;
+} */
+
+.admin-input-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.admin-input-div .input-box{
+  width: 75%;
+  max-width:75%;
+  min-width: 75%;
+  height: 45px;
+  margin: 8px;
+  border-radius: 7px;
+  border: 0.5px solid rgb(204, 204, 204);
+  outline: none;
+  padding: 15px;
+  color: black;
+  font-size: 15px;
+
+}
+
+.addevent-btn{
+  width: 75%;
+  max-width:75%;
+  height: 40px;
+  margin: 8px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  color: black;
+  font-weight: 500;
+  background-color: rgb(235, 235, 36); 
+  color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.validation-error{
+  margin: 0;
+  padding: 0;
+  color: red;
+  font-size: 12px;
+  /* border: 2px solid black; */
+
+
+
+}
+.addevent-btn:hover{
+  background-color:#007bff;
+  color: white;
+} 
+.admin-main-section{
+  /* border: 2px solid black; */
+  margin-top: 30px;
+}
+textarea{
+  min-height: 70px !important;
+  /* font-size: 15px !important;
+  margin: 8px !important; */
+
+}
+.card{
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover{
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .admin-input-div .input-box{
+    width: 90%;
+    max-width:90%;
+    
+  }
+  .addevent-btn{
+    width: 90%;
+    max-width:90%;
+  }
+  .heading-div h2{
+    font-size: 18px;
+  }
+  .card-main-div{
+    max-width: 90%;
+    /* border: 2px solid red; */
+  
+  }
+}
+
+
+/* media query for mobile device */
+@media (max-width: 500px) {
+  .admin-input-div .input-box{
+    width: 90%;
+    max-width:90%;
+  }
+  .addevent-btn{
+    width: 90%;
+    max-width:90%;
+  }
+  .heading-div h2{
+    font-size: 18px;
+  }
+  .card-main-div{
+    max-width: 90%;
+    /* border: 2px solid red; */
+  }
+}
+
+@media (max-width: 400px) {
+  .admin-input-div .input-box{
+    width: 95%;
+    max-width:95%;
+  }
+  .addevent-btn{
+    width: 95%;
+    max-width:95%;
+  }
+  .heading-div h2{
+    font-size: 17px;
+  }
+  .card-main-div{
+    max-width: 100%;
+    /* border: 2px solid red; */
+  }
+}
+
+
+
+
+/* body {
   font-family: 'Arial', sans-serif;
   background: #fff;
   color: #070707;
@@ -58,4 +300,4 @@ textarea {
   background-color: rgba(12, 1, 28, 0.739);
   color: #fff;
 }
-
+ */
