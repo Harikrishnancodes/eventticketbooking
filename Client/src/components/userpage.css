@@ -1,11 +1,11 @@
 /* UserPage.css */
 
 /* Style the container */
-.container {
+.user_container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #8a4e4e34;
+    background-color: #ffff;
     border: 1px solid #ddd;
     border-radius: 5px;
   }
@@ -14,7 +14,7 @@
   .event-card {
     padding: 10px;
     margin: 10px 0;
-    background-color: #4dd83bec;
+    background-color: #31532dd2;
     border: 1px solid #ddd;
     border-radius: 5px;
     display: flex;

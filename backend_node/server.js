@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const db = require('./config/db');
 const bodyParser = require("body-parser");
+const jwt = require ("jsonwebtoken")
 ;
 
 
@@ -29,6 +30,7 @@ const port = process.env.PORT || 3000;
 
 
 
+
 const userrouter = require('./router/userRouter');
 
 db(()=>{
@@ -50,6 +52,8 @@ const eventSchema = new mongoose.Schema({
 });
 
 const Event = mongoose.model('Event', eventSchema);
+
+
 
 app.get('/events', async (req, res) => {
   try {

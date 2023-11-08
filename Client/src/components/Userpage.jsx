@@ -9,6 +9,28 @@ function UserPage() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [ticketCount, setTicketCount] = useState(1);
 
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      axios
+        .get("http://localhost:8000/profile", {
+          headers: {
+            Authorization: token,
+          },
+        })
+        .then((response) => {
+          setUser(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, []);
+
+
+  
   const fetchEvents = () => {
     axios.get('http://localhost:8000/events')
       .then((response) => {
@@ -32,21 +54,21 @@ function UserPage() {
   }, []);
 
   return (
-    <div className="container">
-    <h2>Event List</h2>
-    <Carousel infiniteLoop showThumbs={false}>
-    {events.map((event) => (
-      <div key={event._id} className="event-card">
-        <div>
-          <h3>{event.name}</h3>
-          <p>Date: {event.date}</p>
-          <p>Description: {event.description}</p>
-          <p>Price: {event.price}</p>
-        </div>
-        <button onClick={() => setSelectedEvent(event)}>Book Tickets</button>
-      </div>
+    <div className=" user_container">
+     <h2>Event List</h2>
+      <Carousel infiniteLoop showThumbs={false}>
+        {events.map((event) => (
+          <div key={event._id} className="event-card">
+            <div>
+              <h3>{event.name}</h3>
+               <p>Date: {event.date}</p>
+              <p>Description: {event.description}</p>
+              <p>Price: {event.price}</p>
+           </div>
+       <button onClick={() => setSelectedEvent(event)}>Book Tickets</button>
+     </div>
     ))}
-    </Carousel>
+  </Carousel>
 
     {selectedEvent && (
       <div className="selected-event">

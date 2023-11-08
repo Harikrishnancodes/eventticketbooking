@@ -1,44 +1,58 @@
+/* Base styles for large screens */
 .login_container {
 	width: 100%;
 	min-height: 100vh;
-	background-color: #f5f5f5;
+	background-color:  #f5f1f1eb;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.login_form_container {
+  }
+  
+  .login_form_container {
 	width: 900px;
 	height: 500px;
 	display: flex;
 	border-radius: 10px;
 	box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
-		0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
-}
-
-.left {
+	  0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+  }
+  
+  /* Left and right sections styles */
+  .left {
 	flex: 2;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: rgba(181, 113, 73, 0.138);
+	background-color: #3bb19b;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
-}
-
-.form_container {
+  }
+  
+  .right {
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-.form_container h1 {
+	justify-content: center;
+	background-color: #fbab179d;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+  }
+  
+  /* Common styles for both sections */
+  .form_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  .form_container h1 {
 	font-size: 40px;
 	margin-top: 0;
-}
-
-.input {
+  }
+  
+  .input {
 	outline: none;
 	border: none;
 	width: 370px;
@@ -47,9 +61,9 @@
 	background-color: #edf5f3;
 	margin: 5px 0;
 	font-size: 14px;
-}
-
-.error_msg {
+  }
+  
+  .error_msg {
 	width: 370px;
 	padding: 15px;
 	margin: 5px 0;
@@ -58,28 +72,18 @@
 	color: white;
 	border-radius: 5px;
 	text-align: center;
-}
-
-.right {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: #fbab17;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.right h1 {
+  }
+  
+  .right h1 {
 	margin-top: 0;
-	color: white;
+	color: rgb(17, 16, 16);
 	font-size: 40px;
 	align-self: center;
-}
-
-.white_btn,
-.green_btn {
+  }
+  
+  /* Buttons styles */
+  .white_btn,
+  .green_btn {
 	border: none;
 	outline: none;
 	padding: 12px 0;
@@ -89,10 +93,33 @@
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
-}
-
-.green_btn {
+  }
+  
+  .green_btn {
 	background-color: #fbab17;
 	color: white;
 	margin: 10px;
-}
+  }
+  
+  /* Media query for small screens */
+  @media (max-width: 768px) {
+	.login_form_container {
+	  width: 100%;
+	  flex-direction: column; /* Stack left and right sections */
+	  height: auto; /* Let content determine the height */
+	}
+  
+	.left, .right {
+	  flex: 1;
+	  border-radius: 0; /* Remove border-radius for smaller screens */
+	}
+  
+	.input {
+	  width: 90%; /* Adjust input width for smaller screens */
+	}
+  
+	.white_btn, .green_btn {
+	  width: 80%; /* Make buttons full width on smaller screens */
+	}
+  }
+  
